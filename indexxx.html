@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Boutique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #f8f0f4;
+            padding: 30px 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d83f87;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 15px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-link:hover {
+            background-color: #f0d0e0;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+            color: #d83f87;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+        
+        .category-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #d83f87;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .category-name {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+            }
+            
+            .main-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">CHIC BOUTIQUE</div>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i>👤</i> My Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i>❤️</i> Liked Items
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i>🎮</i> Fashion Game
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i>🛒</i> Cart
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i>📦</i> Orders
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i>⚙️</i> Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Dresses Categories -->
+        <div class="category-section">
+            <h2 class="section-title">Dresses</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">Evening Dress Image</div>
+                    <div class="category-name">Evening Dresses</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Casual Dress Image</div>
+                    <div class="category-name">Casual Dresses</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Maxi Dress Image</div>
+                    <div class="category-name">Maxi Dresses</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Party Dress Image</div>
+                    <div class="category-name">Party Dresses</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Midi Dress Image</div>
+                    <div class="category-name">Midi Dresses</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Mini Dress Image</div>
+                    <div class="category-name">Mini Dresses</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Accessories Categories -->
+        <div class="category-section">
+            <h2 class="section-title">Accessories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">Jewelry Image</div>
+                    <div class="category-name">Jewelry</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Bags Image</div>
+                    <div class="category-name">Bags</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Shoes Image</div>
+                    <div class="category-name">Shoes</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Scarves Image</div>
+                    <div class="category-name">Scarves</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Hats Image</div>
+                    <div class="category-name">Hats</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">Belts Image</div>
+                    <div class="category-name">Belts</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

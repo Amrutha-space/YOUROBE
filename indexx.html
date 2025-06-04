@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Aesthetics Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .slide {
+            width: 200px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            animation: moveAndRotate 10s infinite linear;
+        }
+
+        @keyframes moveAndRotate {
+            0% {
+                transform: translateX(100vw) rotate(0deg);
+            }
+            100% {
+                transform: translateX(-100vw) rotate(360deg);
+            }
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container" id="slideshow"></div>
+    <div class="popup" id="popup">Hello Fashion!</div>
+
+    <script>
+        const fashionStyles = [
+            "minimalist.jpg", "vintage.jpg", "streetwear.jpg",
+            "bohemian.jpg", "preppy.jpg", "punk.jpg",
+            "cottagecore.jpg", "y2k.jpg", "goth.jpg", "cyberpunk.jpg"
+        ];
+
+        const slideshow = document.getElementById('slideshow');
+        const popup = document.getElementById('popup');
+
+        function createSlide(image) {
+            const slide = document.createElement('div');
+            slide.className = 'slide';
+            slide.style.backgroundImage = `url('${image}')`;
+            slideshow.appendChild(slide);
+        }
+
+        fashionStyles.forEach(image => createSlide(image));
+
+        window.onload = function() {
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
